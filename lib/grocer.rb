@@ -12,7 +12,14 @@ def consolidate_cart(cart)
   receipt = []
   cart.each do |product|
     receipt_item = find_item_by_name_in_collection(product[:item], receipt)
-    if 
+    if receipt_item == nil
+      product[:count] = 1
+      receipt << product
+    else
+      receipt_item[:count] += 1
+    end
+  end
+  receipt
 end
 
 

@@ -10,10 +10,9 @@ end
 
 def consolidate_cart(cart)
   receipt = []
-  cart.each do |item|
-    item[:count] = 1
-    receipt << item
-  end
+  cart.each do |product|
+    receipt_item = find_item_by_name_in_collection(product[:item], receipt)
+    if 
 end
 
 
